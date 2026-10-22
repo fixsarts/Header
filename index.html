@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fixs Arts – Header Demo</title>
+<!-- 1) Pasang CSS (opsional: kalau dihapus, header.js memuatnya otomatis) -->
+<link rel="stylesheet" href="header.css">
+<style>
+  body{margin:0;background:#0a0a0f;color:#f4f5fa;font-family:"Inter",system-ui,sans-serif;line-height:1.6}
+  .demo{max-width:1120px;margin:0 auto;padding:0 20px}
+  .hero{padding:70px 0 40px}
+  .hero h1{font-size:clamp(32px,6vw,54px);line-height:1.1;margin:0 0 14px;letter-spacing:-.03em}
+  .hero p{color:#8c8e9c;max-width:560px}
+  .card{background:#14151c;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px;margin:0 0 24px;min-height:260px}
+  .card p{color:#8c8e9c}
+  button{padding:10px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#101117;color:#f4f5fa;cursor:pointer;font:inherit}
+</style>
+</head>
+<body>
+
+<!-- 2) Tempat header (opsional; kalau tidak ada, dibuat otomatis di atas <body>) -->
+<div id="fa-header-root"></div>
+
+<main class="demo">
+  <section class="hero" id="home">
+    <h1>Satu header,<br>dipakai di semua web.</h1>
+    <p>Scroll buat lihat sticky header, klik Tools buat dropdown.</p>
+    <button onclick="FixsHeader.setCart(FixsHeader.cart+1)">+ Tambah ke keranjang</button>
+  </section>
+  <div class="card" id="layanan"><h2>Layanan</h2><p>Section dummy.</p></div>
+  <div class="card" id="portfolio"><h2>Portfolio</h2><p>Section dummy.</p></div>
+  <div class="card" id="tentang"><h2>Tentang</h2><p>Section dummy.</p></div>
+</main>
+
+<!-- 3) (Opsional) ubah setting sebelum header.js -->
+<script>
+  // window.FixsHeaderConfig = { cartCount: 2, theme: "dark", hideOnScrollDown: true };
+  document.addEventListener("fixsarts:search", function (e) { console.log("Cari:", e.detail.q); });
+</script>
+<script src="header.js"></script>
+</body>
+</html>
